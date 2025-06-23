@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praveena N - Distinguished Social Activist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #533483);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        .background-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 69, 0, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #9c88ff);
+            background-size: 300% 100%;
+            animation: rainbow 3s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 300% 50%;
+            }
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .profile-image-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            letter-spacing: -2px;
+        }
+
+        .profession {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .profession::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            border-radius: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .position-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .position-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(255, 215, 0, 0.1);
+        }
+
+        .position-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(138, 43, 226, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .position-card:hover::before {
+            opacity: 1;
+        }
+
+        .position-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
+            overflow: hidden;
+        }
+
+        .position-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .position-card:nth-child(2) .position-icon {
+            background: linear-gradient(135deg, #4d96ff, #6bcf7f);
+            box-shadow: 0 15px 30px rgba(77, 150, 255, 0.2);
+        }
+
+        .position-card:nth-child(3) .position-icon {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
+        }
+
+        .position-card:nth-child(4) .position-icon {
+            background: linear-gradient(135deg, #9c88ff, #667eea);
+            box-shadow: 0 15px 30px rgba(156, 136, 255, 0.2);
+        }
+
+        .organization-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .role-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .achievement-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+        }
+
+        .decorative-elements::before,
+        .decorative-elements::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        }
+
+        .decorative-elements::before {
+            width: 40px;
+            height: 40px;
+            top: 0;
+            right: 0;
+            animation: pulse 2s infinite;
+        }
+
+        .decorative-elements::after {
+            width: 60px;
+            height: 60px;
+            bottom: 0;
+            left: 0;
+            animation: pulse 2s infinite 0.5s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        .footer-section {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: #ffd700;
+            position: absolute;
+            top: -5px;
+        }
+
+        .quote::before {
+            left: -20px;
+        }
+
+        .quote::after {
+            right: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 15px;
+            }
+
+            .profile-card {
+                padding: 40px 30px;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .profession {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+
+            .positions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .position-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="decorative-elements"></div>
+
+            <div class="header-section">
+                <div class="profile-image-placeholder">
+                    PN
+                </div>
+                <h1 class="name">Praveena N</h1>
+                <h2 class="profession">Distinguished Social Activist</h2>
+                <p class="tagline">Champion of Human Rights • Advocate for Social Justice • Community Leader</p>
+            </div>
+
+            <div class="positions-grid">
+                <div class="position-card">
+                    <div class="position-icon">
+                        <img src="./CCI.jpg" alt="">
+                    </div>
+                    <h3 class="organization-name">Consumer Confederation of India</h3>
+                    <h4 class="role-title">Secretary</h4>
+                    <p class="description">Leading nationwide consumer protection initiatives, ensuring fair trade
+                        practices, and spearheading advocacy campaigns for consumer rights across India's diverse
+                        marketplace.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Consumer Rights</span>
+                        <span class="badge">Policy Reform</span>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-icon">
+                        <img src="./310058272_459435786218737_6019105143560362551_n.jpg" alt="">
+                    </div>
+                    <h3 class="organization-name">National Human Rights & Social Justice Commission</h3>
+                    <h4 class="role-title">Vice Chairperson - Telangana State</h4>
+                    <p class="description">Overseeing critical human rights protection mechanisms and implementing
+                        comprehensive social justice programs throughout Telangana State, ensuring equitable treatment
+                        for all citizens.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Human Rights</span>
+                        <span class="badge">Social Justice</span>
+                        <span class="badge">Policy Implementation</span>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-icon">❤️</div>
+                    <h3 class="organization-name">Red Cross India Society</h3>
+                    <h4 class="role-title">Active Member</h4>
+                    <p class="description">Contributing to life-saving humanitarian relief operations, disaster response
+                        coordination, and community health initiatives across India's most vulnerable regions.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Humanitarian Aid</span>
+                        <span class="badge">Disaster Relief</span>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-icon">🤝</div>
+                    <h3 class="organization-name">Community Development</h3>
+                    <h4 class="role-title">Professional Social Worker</h4>
+                    <p class="description">Dedicated to grassroots community empowerment, implementing sustainable
+                        development programs, and creating lasting positive change in underprivileged communities.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Community Service</span>
+                        <span class="badge">Empowerment</span>
+                        <span class="badge">Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <p class="quote">Dedicated to building a more just and equitable society through unwavering commitment
+                    to human dignity and social progress</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
