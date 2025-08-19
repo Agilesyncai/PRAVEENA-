@@ -127,9 +127,6 @@
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .profile-image-container img {
@@ -137,23 +134,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Professional avatar placeholder */
-        .profile-avatar {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .profile-image-container::before {
@@ -165,7 +145,7 @@
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             animation: shimmer 2s infinite;
-            z-index: 2;
+            z-index: 1;
         }
 
         @keyframes shimmer {
@@ -274,7 +254,6 @@
             margin-bottom: 25px;
             box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
             overflow: hidden;
-            position: relative;
         }
 
         .position-icon img {
@@ -282,17 +261,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-        }
-
-        /* Fallback for position icons when images don't load */
-        .position-icon::after {
-            content: attr(data-fallback);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 35px;
-            z-index: 1;
         }
 
         .position-card:nth-child(2) .position-icon {
@@ -445,37 +413,6 @@
             right: -20px;
         }
 
-        /* File upload area styling */
-        .image-upload-section {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .upload-area {
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
-        }
-
-        .upload-area:hover {
-            border-color: #ffd700;
-            background: rgba(255, 215, 0, 0.05);
-        }
-
-        .upload-area input[type="file"] {
-            display: none;
-        }
-
-        .upload-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 40px 15px;
@@ -513,124 +450,68 @@
         <div class="profile-card">
             <div class="decorative-elements"></div>
 
-
-
-            <div class="profile-image-container">
-                <div class="profile-avatar" id="avatarPlaceholder">PN</div>
-                <img id="profileImg" src="./WhatsApp Image 2025-08-19 at 1.12.14 PM.jpeg" alt="Praveena N"
-                    style="display: none;">
-            </div>
-            <h1 class="name">Praveena N</h1>
-            <h2 class="dd">Managing Director of <span>AgileSync AI Pvt.Ltd</span></h2>
-            <h3 class="profession">Distinguished Social Activist</h3>
-            <p class="tagline">Champion of Human Rights • Advocate for Social Justice • Community Leader</p>
-        </div>
-
-        <div class="positions-grid">
-            <div class="position-card">
-                <div class="position-icon" data-fallback="🛡️">
-                    <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
-                    <div onclick="this.previousElementSibling.click()"
-                        style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        🛡️</div>
+            <div class="header-section">
+                <div class="profile-image-container">
+                    <img src="./WhatsApp Image 2025-08-19 at 1.12.14 PM.jpeg" alt="Praveena N">
                 </div>
-                <h3 class="organization-name">Consumer Confederation of India</h3>
-                <h4 class="role-title">Secretary</h4>
-                <p class="description">Leading nationwide consumer protection initiatives, ensuring fair trade
-                    practices, and spearheading advocacy campaigns for consumer rights across India's diverse
-                    marketplace.</p>
-                <div class="achievement-badges">
-                    <span class="badge">Consumer Rights</span>
-                    <span class="badge">Policy Reform</span>
-                </div>
+                <h1 class="name">Praveena N</h1>
+                <h2 class="dd">Managing Director of <span>AgileSync AI Pvt.Ltd</span></h2>
+                <h3 class="profession">Distinguished Social Activist</h3>
+                <p class="tagline">Champion of Human Rights • Advocate for Social Justice • Community Leader</p>
             </div>
 
-            <div class="position-card">
-                <div class="position-icon" data-fallback="⚖️">
-                    <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
-                    <div onclick="this.previousElementSibling.click()"
-                        style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        ⚖️</div>
+            <div class="positions-grid">
+                <div class="position-card">
+                    <div class="position-icon">
+                        <img src="./CCI.jpg" alt="">
+                    </div>
+                    <h3 class="organization-name">Consumer Confederation of India</h3>
+                    <h4 class="role-title">Secretary</h4>
+                    <p class="description">Leading nationwide consumer protection initiatives, ensuring fair trade
+                        practices, and spearheading advocacy campaigns for consumer rights across India's diverse
+                        marketplace.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Consumer Rights</span>
+                        <span class="badge">Policy Reform</span>
+                    </div>
                 </div>
-                <h3 class="organization-name">National Human Rights & Social Justice Commission</h3>
-                <h4 class="role-title">Vice Chairperson - Telangana State</h4>
-                <p class="description">Overseeing critical human rights protection mechanisms and implementing
-                    comprehensive social justice programs throughout Telangana State, ensuring equitable treatment
-                    for all citizens.</p>
-                <div class="achievement-badges">
-                    <span class="badge">Human Rights</span>
-                    <span class="badge">Social Justice</span>
-                    <span class="badge">Policy Implementation</span>
+
+                <div class="position-card">
+                    <div class="position-icon">
+                        <img src="./310058272_459435786218737_6019105143560362551_n.jpg" alt="">
+                    </div>
+                    <h3 class="organization-name">National Human Rights & Social Justice Commission</h3>
+                    <h4 class="role-title">Vice Chairperson - Telangana State</h4>
+                    <p class="description">Overseeing critical human rights protection mechanisms and implementing
+                        comprehensive social justice programs throughout Telangana State, ensuring equitable treatment
+                        for all citizens.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Human Rights</span>
+                        <span class="badge">Social Justice</span>
+                        <span class="badge">Policy Implementation</span>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-icon">🤝</div>
+                    <h3 class="organization-name">Community Development</h3>
+                    <h4 class="role-title">Professional Social Worker</h4>
+                    <p class="description">Dedicated to grassroots community empowerment, implementing sustainable
+                        development programs, and creating lasting positive change in underprivileged communities.</p>
+                    <div class="achievement-badges">
+                        <span class="badge">Community Service</span>
+                        <span class="badge">Empowerment</span>
+                        <span class="badge">Development</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="position-card">
-                <div class="position-icon" data-fallback="🤝">🤝</div>
-                <h3 class="organization-name">Community Development</h3>
-                <h4 class="role-title">Professional Social Worker</h4>
-                <p class="description">Dedicated to grassroots community empowerment, implementing sustainable
-                    development programs, and creating lasting positive change in underprivileged communities.</p>
-                <div class="achievement-badges">
-                    <span class="badge">Community Service</span>
-                    <span class="badge">Empowerment</span>
-                    <span class="badge">Development</span>
-                </div>
+            <div class="footer-section">
+                <p class="quote">Dedicated to building a more just and equitable society through unwavering commitment
+                    to human dignity and social progress</p>
             </div>
-        </div>
-
-        <div class="footer-section">
-            <p class="quote">Dedicated to building a more just and equitable society through unwavering commitment
-                to human dignity and social progress</p>
         </div>
     </div>
-    </div>
-
-    <script>
-        function loadProfileImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = document.getElementById('profileImg');
-                    const avatar = document.getElementById('avatarPlaceholder');
-                    img.src = e.target.result;
-                    img.style.display = 'block';
-                    avatar.style.display = 'none';
-                    // Hide the upload area once image is loaded
-                    document.querySelector('.image-upload-section').style.display = 'none';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function loadIcon(event, iconContainer) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    img.style.objectFit = 'cover';
-                    img.style.borderRadius = '50%';
-
-                    // Replace the content of the icon container
-                    const clickableDiv = iconContainer.querySelector('div');
-                    clickableDiv.innerHTML = '';
-                    clickableDiv.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Try to load the original image on page load
-        window.onload = function () {
-            // Since the local image doesn't exist, we'll show the professional avatar initials "PN"
-            // The upload functionality is still available for users to add a real photo
-            console.log('Profile ready with initials avatar. Upload an image to replace it.');
-        };
-    </script>
 </body>
 
 </html>
