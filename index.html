@@ -513,82 +513,76 @@
         <div class="profile-card">
             <div class="decorative-elements"></div>
 
-            <div class="header-section">
-                <div class="image-upload-section">
-                    <div class="upload-area" onclick="document.getElementById('profileImage').click()">
-                        <input type="file" id="profileImage" accept="image/*" onchange="loadProfileImage(event)">
-                        <div class="upload-text">📷 Click here to upload profile image</div>
-                    </div>
-                </div>
 
-                <div class="profile-image-container">
-                    <div class="profile-avatar" id="avatarPlaceholder">PN</div>
-                    <img id="profileImg" src="./WhatsApp Image 2025-08-19 at 1.12.14 PM.jpeg" alt="Praveena N"
-                        style="display: none;">
-                </div>
-                <h1 class="name">Praveena N</h1>
-                <h2 class="dd">Managing Director of <span>AgileSync AI Pvt.Ltd</span></h2>
-                <h3 class="profession">Distinguished Social Activist</h3>
-                <p class="tagline">Champion of Human Rights • Advocate for Social Justice • Community Leader</p>
+
+            <div class="profile-image-container">
+                <div class="profile-avatar" id="avatarPlaceholder">PN</div>
+                <img id="profileImg" src="./WhatsApp Image 2025-08-19 at 1.12.14 PM.jpeg" alt="Praveena N"
+                    style="display: none;">
             </div>
+            <h1 class="name">Praveena N</h1>
+            <h2 class="dd">Managing Director of <span>AgileSync AI Pvt.Ltd</span></h2>
+            <h3 class="profession">Distinguished Social Activist</h3>
+            <p class="tagline">Champion of Human Rights • Advocate for Social Justice • Community Leader</p>
+        </div>
 
-            <div class="positions-grid">
-                <div class="position-card">
-                    <div class="position-icon" data-fallback="🛡️">
-                        <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
-                        <div onclick="this.previousElementSibling.click()"
-                            style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            🛡️</div>
-                    </div>
-                    <h3 class="organization-name">Consumer Confederation of India</h3>
-                    <h4 class="role-title">Secretary</h4>
-                    <p class="description">Leading nationwide consumer protection initiatives, ensuring fair trade
-                        practices, and spearheading advocacy campaigns for consumer rights across India's diverse
-                        marketplace.</p>
-                    <div class="achievement-badges">
-                        <span class="badge">Consumer Rights</span>
-                        <span class="badge">Policy Reform</span>
-                    </div>
+        <div class="positions-grid">
+            <div class="position-card">
+                <div class="position-icon" data-fallback="🛡️">
+                    <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
+                    <div onclick="this.previousElementSibling.click()"
+                        style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        🛡️</div>
                 </div>
-
-                <div class="position-card">
-                    <div class="position-icon" data-fallback="⚖️">
-                        <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
-                        <div onclick="this.previousElementSibling.click()"
-                            style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            ⚖️</div>
-                    </div>
-                    <h3 class="organization-name">National Human Rights & Social Justice Commission</h3>
-                    <h4 class="role-title">Vice Chairperson - Telangana State</h4>
-                    <p class="description">Overseeing critical human rights protection mechanisms and implementing
-                        comprehensive social justice programs throughout Telangana State, ensuring equitable treatment
-                        for all citizens.</p>
-                    <div class="achievement-badges">
-                        <span class="badge">Human Rights</span>
-                        <span class="badge">Social Justice</span>
-                        <span class="badge">Policy Implementation</span>
-                    </div>
-                </div>
-
-                <div class="position-card">
-                    <div class="position-icon" data-fallback="🤝">🤝</div>
-                    <h3 class="organization-name">Community Development</h3>
-                    <h4 class="role-title">Professional Social Worker</h4>
-                    <p class="description">Dedicated to grassroots community empowerment, implementing sustainable
-                        development programs, and creating lasting positive change in underprivileged communities.</p>
-                    <div class="achievement-badges">
-                        <span class="badge">Community Service</span>
-                        <span class="badge">Empowerment</span>
-                        <span class="badge">Development</span>
-                    </div>
+                <h3 class="organization-name">Consumer Confederation of India</h3>
+                <h4 class="role-title">Secretary</h4>
+                <p class="description">Leading nationwide consumer protection initiatives, ensuring fair trade
+                    practices, and spearheading advocacy campaigns for consumer rights across India's diverse
+                    marketplace.</p>
+                <div class="achievement-badges">
+                    <span class="badge">Consumer Rights</span>
+                    <span class="badge">Policy Reform</span>
                 </div>
             </div>
 
-            <div class="footer-section">
-                <p class="quote">Dedicated to building a more just and equitable society through unwavering commitment
-                    to human dignity and social progress</p>
+            <div class="position-card">
+                <div class="position-icon" data-fallback="⚖️">
+                    <input type="file" accept="image/*" onchange="loadIcon(event, this)" style="display:none;">
+                    <div onclick="this.previousElementSibling.click()"
+                        style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        ⚖️</div>
+                </div>
+                <h3 class="organization-name">National Human Rights & Social Justice Commission</h3>
+                <h4 class="role-title">Vice Chairperson - Telangana State</h4>
+                <p class="description">Overseeing critical human rights protection mechanisms and implementing
+                    comprehensive social justice programs throughout Telangana State, ensuring equitable treatment
+                    for all citizens.</p>
+                <div class="achievement-badges">
+                    <span class="badge">Human Rights</span>
+                    <span class="badge">Social Justice</span>
+                    <span class="badge">Policy Implementation</span>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-icon" data-fallback="🤝">🤝</div>
+                <h3 class="organization-name">Community Development</h3>
+                <h4 class="role-title">Professional Social Worker</h4>
+                <p class="description">Dedicated to grassroots community empowerment, implementing sustainable
+                    development programs, and creating lasting positive change in underprivileged communities.</p>
+                <div class="achievement-badges">
+                    <span class="badge">Community Service</span>
+                    <span class="badge">Empowerment</span>
+                    <span class="badge">Development</span>
+                </div>
             </div>
         </div>
+
+        <div class="footer-section">
+            <p class="quote">Dedicated to building a more just and equitable society through unwavering commitment
+                to human dignity and social progress</p>
+        </div>
+    </div>
     </div>
 
     <script>
