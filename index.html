@@ -118,24 +118,25 @@
             position: relative;
         }
 
-        .profile-image-placeholder {
+        .profile-image-container {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
-        .profile-image-placeholder::before {
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-image-container::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -144,6 +145,7 @@
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             animation: shimmer 2s infinite;
+            z-index: 1;
         }
 
         @keyframes shimmer {
@@ -449,8 +451,8 @@
             <div class="decorative-elements"></div>
 
             <div class="header-section">
-                <div class="profile-image-placeholder">
-                    PN
+                <div class="profile-image-container">
+                    <img src="./WhatsApp Image 2025-08-19 at 12.52.59 PM.jpeg" alt="Praveena N">
                 </div>
                 <h1 class="name">Praveena N</h1>
                 <h2 class="dd">Managing Director of <span>AgileSync AI Pvt.Ltd</span></h2>
@@ -487,18 +489,6 @@
                         <span class="badge">Human Rights</span>
                         <span class="badge">Social Justice</span>
                         <span class="badge">Policy Implementation</span>
-                    </div>
-                </div>
-
-                <div class="position-card">
-                    <div class="position-icon">❤️</div>
-                    <h3 class="organization-name">Red Cross India Society</h3>
-                    <h4 class="role-title">Active Member</h4>
-                    <p class="description">Contributing to life-saving humanitarian relief operations, disaster response
-                        coordination, and community health initiatives across India's most vulnerable regions.</p>
-                    <div class="achievement-badges">
-                        <span class="badge">Humanitarian Aid</span>
-                        <span class="badge">Disaster Relief</span>
                     </div>
                 </div>
 
